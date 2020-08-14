@@ -27,6 +27,13 @@ subprojects {
 ext.verifyKeystore()
 
 project.ext {
+    try {
+        def grgit = Grgit.open(dir: '.')
+        versionNum = grgit.log(includes: ['HEAD']).size()
+    } catch (Exception ignored) {
+        versionNum = 0
+    }
+
     minSdkVersion = 16
     compileSdkVersion = 30
     buildToolsVersion = '30.0.0'
@@ -34,14 +41,14 @@ project.ext {
     versionName = """$versionID-skyscanner"""
 
     googleVersions = [
-        glide                 : '4.11.0',
-        material              : '1.1.0',
+            glide   : '4.11.0',
+            material: '1.1.0',
     ]
 
     androidXVersions = [
-        annotation            : '1.1.0',
-        appCompat             : '1.1.0',
-        browser               : '1.2.0',
+            annotation: '1.1.0',
+            appCompat : '1.1.0',
+            browser   : '1.2.0',
     ]
 
     okioVersion = '1.17.5'
