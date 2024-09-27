@@ -1,7 +1,5 @@
 package net.openid.appauth.browser;
 
-import net.openid.appauth.BuildConfig;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
