@@ -3,7 +3,6 @@ apply plugin: 'maven-publish'
 apply plugin: 'signing'
 
 apply from: '../config/android-common.gradle'
-apply from: 'gradle-maven-push.gradle'
 
 group = GROUP
 version = rootProject.versionName
